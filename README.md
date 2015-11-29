@@ -9,3 +9,5 @@ Para execução, foram utilizados as seguintes ferramentas:
 * [LinqKit](https://www.nuget.org/packages/LinqKit/) para gerar árvores de expressão dinâmicas para os filtros dinâmicos
  
 
+Para saber mais sobre o LinqKit e o PredicateBuilder, veja [este link](http://www.albahari.com/nutshell/predicatebuilder.aspx)
+
