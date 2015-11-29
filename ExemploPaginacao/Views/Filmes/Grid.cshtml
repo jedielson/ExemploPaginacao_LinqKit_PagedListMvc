@@ -1,0 +1,48 @@
+﻿@using PagedList
+@using PagedList.Mvc;
+@model ExemploPaginacao.ViewModels.Filmes.FilmesGridViewModel
+
+<table class="table">
+    <tr>
+        <th>
+            Diretor
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Ano
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Grid)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diretor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager(Model.Grid,
+                            page => Url.Action("CarregarGrid", "Filmes", new
+                            {
+                                page = page,
+                                Ano = Model.Filter.Ano,
+                                Diretor = Model.Filter.Diretor,
+                                Nome = Model.Filter.Nome
+                            }),
+                            PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()
+                            {
+                                HttpMethod = "POST",
+                                UpdateTargetId = "grid"
+                            }))
