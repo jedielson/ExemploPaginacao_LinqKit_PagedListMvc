@@ -1,2 +1,11 @@
-# ExemploPaginacao_LinqKit_PagedListMvc
-Um exemplo de projeto com uso de paginação e recursos de geração dinâmica de filtros e queries
+# ExemploPaginacao Usando LinqKit e PagedListMvc
+
+
+Um simples exemplo de paginação e filtro dinâmico em Asp.Net MVC.
+
+Para execução, foram utilizados as seguintes ferramentas:
+
+* [Paged List Mvc](https://www.nuget.org/packages/PagedList.Mvc) para manipular a paginação dos resultados
+* [LinqKit](https://www.nuget.org/packages/LinqKit/) para gerar árvores de expressão dinâmicas para os filtros dinâmicos
+ 
+
