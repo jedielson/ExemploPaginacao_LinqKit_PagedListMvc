@@ -2,6 +2,7 @@
 {
     using System.Data.Entity;
     using System.Data.Entity.ModelConfiguration.Conventions;
+    using System.Diagnostics;
 
     public class EntityContext : DbContext
     {
@@ -13,6 +14,7 @@
         public EntityContext()
             : base("StringConexao")
         {
+            Database.Log = s => Debug.Write(s);
         }
 
         public DbSet<Filme> Filmes { get; set; }
